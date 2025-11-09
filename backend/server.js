@@ -30,7 +30,7 @@ const errorHandler = error => {
             break;
 
         case 'EADDRINUSE':
-            Console.error(bind + 'Is already in use.');
+            console.error(bind + 'Is already in use.');
             process.exit(1);
             break;
 

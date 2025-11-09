@@ -106,7 +106,7 @@ exports.addRating = async (req, res, next) => {
 
 exports.getBestRating = async (req, res, next) => {
     try {
-        const bestBooks = await Book.find().sort({ averageRating: 1 }).limit(3);
+        const bestBooks = await Book.find().sort({ averageRating: -1 }).limit(3);
         res.status(200).json(bestBooks);
     } catch (error) {
         const status = error.name === 'ValidationError' ? 400 : 500;
